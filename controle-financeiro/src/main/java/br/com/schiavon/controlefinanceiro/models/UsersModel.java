@@ -28,14 +28,7 @@ public class UsersModel implements Serializable {
     private LocalDate dataNascimento;
     @Column(nullable = false)
     private BigDecimal rendaMensal;
-
-    public UsersModel(){}
-
-    public UsersModel(String nome, String email, String password, LocalDate dataNascimento, BigDecimal rendaMensal) {
-        this.nome = nome;
-        this.email = email;
-        this.password = password;
-        this.dataNascimento = dataNascimento;
-        this.rendaMensal = rendaMensal;
-    }
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "family_id")
+    private FamilyControlModel family;
 }

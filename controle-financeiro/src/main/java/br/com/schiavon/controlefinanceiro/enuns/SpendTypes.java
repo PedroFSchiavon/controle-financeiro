@@ -8,5 +8,6 @@ public enum SpendTypes {
     CASA,
     LAZER,
     VIAJEM,
-    ASSINATURAS
+    ASSINATURAS,
+    OUTROS
 }
