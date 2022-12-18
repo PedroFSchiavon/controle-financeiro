@@ -18,9 +18,10 @@ public class UsersController {
         public UsersController(UsersService usersService){
                 this.usersService = usersService;
         }
-        @PostMapping
+        @PostMapping()
         public ResponseEntity<Object> createUser(@RequestBody @Valid UsersDto usersDto){
                 UsersModel usersModel = new UsersModel();
+                System.out.println("Cheguei aqui");
                 BeanUtils.copyProperties(usersDto, usersModel);
                 return ResponseEntity.status(HttpStatus.CREATED).body(usersService.save(usersModel));
         }
